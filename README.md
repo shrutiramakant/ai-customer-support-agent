@@ -1,69 +1,51 @@
 # AI Customer Support Agent
 
-## Project Overview
-
-An AI-powered customer support chatbot built using Python and Google's Gemini API. It answers customer questions and helps manage support tickets.
+A beginner-friendly Python project that uses Google's Gemini AI to answer customer support questions and manage support tickets.
 
 ## Features
 
-- AI-generated customer support responses using Gemini
-- Rule-based answers for common questions
-- Create and search support tickets
-- Ticket priority classification
+- AI-generated responses using Gemini
+- Customer support for common questions
+- Create and save support tickets
+- View saved support tickets
+- Search tickets by ticket ID
 - Update ticket status
-- View ticket summaries and dashboards
-- Search tickets by issue keyword
-- Collect and view customer feedback
-- Calculate average customer ratings
-- Generate a project status report
+- Handle errors and API connection failures
 
 ## Technologies Used
 
 - Python
 - Google Gemini API
-- VS Code
-- `google-genai`
-- `python-dotenv`
-- Text files for ticket and feedback storage
+- Google Gen AI SDK
+- python-dotenv
 
 ## Project Files
 
-- `app.py` — Main chatbot application
-- `ticket_manager.py` — Ticket and feedback management
-- `gemini_helper.py` — Gemini API integration
-- `tickets.txt` — Saved support tickets (local data)
-- `feedback.txt` — Saved customer feedback (local data)
-- `.env` — Local API key configuration; never upload this file
-- `requirements.txt` — Required Python packages
-- `.gitignore` — Excludes secret and temporary files
+- `app.py` — Main customer support application
+- `ticket_manager.py` — Creates, searches, views, and updates tickets
+- `gemini_helper.py` — Connects the application to Gemini AI
+- `requirements.txt` — Python dependencies
+- `.gitignore` — Excludes sensitive and local files
 
-## How to Run
+## Setup
 
 1. Install Python.
-2. Open the project folder in VS Code.
-3. Open the terminal in the project folder.
-4. Install the required packages:
+2. Install the required packages:
 
-   ```bash
-   python -m pip install -r requirements.txt
-   ```
+   `pip install -r requirements.txt`
 
-5. Create a `.env` file and configure your Gemini API key using the environment variable name expected by `gemini_helper.py`.
-6. Run the application:
+3. Create a `.env` file in the project folder and add your Gemini API key:
 
-   ```bash
-   python app.py
-   ```
+   `GEMINI_API_KEY=your_api_key_here`
+
+4. Run the application:
+
+   `python app.py`
 
 ## Security
 
-- Never upload `.env` or expose your Gemini API key publicly.
-- Keep API keys private.
-- Use `.gitignore` to exclude secrets and temporary Python files.
+Never upload your `.env` file or share your API key publicly. Local ticket data is excluded from GitHub.
 
-## Future Improvements
+## Project Status
 
-- Build a web-based user interface
-- Integrate a database for ticket storage
-- Add automated testing
-- Improve ticket reporting and analytics
+This project is being developed as a beginner-level Python AI customer support application.
