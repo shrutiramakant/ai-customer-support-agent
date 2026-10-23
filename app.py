@@ -34,7 +34,7 @@ support_answers = {
     "payment": "Please check your payment status. If the amount was deducted but the order failed, our support team can help.",
     "delivery": "Please check your order tracking page for the latest delivery status.",
     "tracking": "You can check your order tracking page for delivery updates.",
-    "order": "Please share your order details so we can help you.",
+    "order": "I can help with your order. For tracking updates, please check your order tracking page. If you still need help, tell me more about your issue.",
     "account": "Please check your account details. If the issue continues, contact our support team.",
     "password": "If you forgot your password, use the Forgot Password option to reset it.",
     "contact": "You can create a support ticket so our team can review your issue.",
@@ -248,6 +248,10 @@ def run_chatbot():
             choice = input(
                 "\nWould you like to create a support ticket? (yes/no): "
             ).strip().lower()
+
+            if choice in ["bye", "exit", "quit"]:
+                print("Goodbye! Have a great day.")
+                break
 
             if choice in ["yes", "y"]:
                 create_ticket(message)
