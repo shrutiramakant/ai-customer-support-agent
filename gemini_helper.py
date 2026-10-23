@@ -8,7 +8,14 @@ from google.genai import types
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key) if api_key else None
+client = (
+    genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(timeout=30000)
+    )
+    if api_key
+    else None
+)
 
 AI_ERROR_MESSAGE = "AI_SUPPORT_ERROR"
 
@@ -18,6 +25,8 @@ conversation_history = []
 
 def ask_gemini(message):
     """Get a customer-support response using Gemini."""
+    if not isinstance(message, str) or not message.strip():
+        return "Please enter a valid question."
 
     if client is None:
         return AI_ERROR_MESSAGE
