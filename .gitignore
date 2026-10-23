@@ -2,3 +2,13 @@
 __pycache__/
 .venv/
 *.pyc
+
+# Local customer data
+tickets.txt
+feedback.txt
+
+# Local testing and development files
+app_backup.py.py
+list_models.py
+test_gemini.py
+test_gemini_helper.py
